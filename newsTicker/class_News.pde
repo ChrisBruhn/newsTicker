@@ -4,9 +4,9 @@ class News {
   String msg;
 
 
-  News(String msg, PVector pos) {
+  News( PVector pos) {
     this.pos = pos;
-    this.msg=msg;
+    
   }
 
 

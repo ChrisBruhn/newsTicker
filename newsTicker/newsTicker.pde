@@ -1,4 +1,4 @@
-String message = "BREAKING NEWS...";
+String message = "BREAKING NEWS";
 PVector speed = new PVector(-4, 0);
 
 APIController api;
@@ -7,8 +7,9 @@ PVector startPos;
 int i=0;
 void setup() {
   size(1400, 600);
+  strokeWeight(0);
   startPos=new PVector(width, height-100);
-  n1= new News(message, startPos);
+  n1= new News(startPos);
   textSize(78);
   fill(0);
   api = new APIController();
@@ -16,12 +17,15 @@ void setup() {
 
 void draw() {
   background (227);
+  
+  
+  
   fill(255, 255, 0);
   rect(0, height-200, width, 150);
-  fill(0);
-  //println(api.getOne());
   
-  //println(api.getNewsNumbers());
+  
+  fill(0);
+  
   
     
     n1.setMessage(api.getOne(i));
@@ -33,5 +37,9 @@ void draw() {
       i++;
       if(i>=api.getNewsNumbers()) i=0;
     }
+  fill(255, 0, 0);
   
+  rect(0, height-200, 400, 150);
+  fill(0);
+  text("BREAKING",30,height-100);
 }
