@@ -21,10 +21,12 @@ class News {
   PVector getPos() {
     return pos;
   }
-  
-  void drawNews(){
-  text(msg,pos.x,pos.y);
+
+  void drawNews() {
+    text(msg, pos.x, pos.y);
   }
-  
-  
+
+  void setMessage(String msg) {
+    this.msg=msg;
+  }
 }
